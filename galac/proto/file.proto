@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+message File {
+  string filename  = 1;
+  string fast_hash = 2;
+}
+
+message FileIndex {
+  repeated File files = 1;
+}
+

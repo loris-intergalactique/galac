@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+message Definition {
+    string name        = 1;
+    string file        = 2;
+    string target_file = 3;
+    string attributes  = 4;
+    string indirect_target_file = 5;
+}
+
+message LanguageComment {
+    string opening_token          = 1;
+    optional string closing_token = 2;
+}
+
+message Language {
+    string name             = 1;
+    LanguageComment comment = 2;
+}
+
+message CodeBlock {
+    string hash     = 1;
+    string content  = 2;
+    string language = 3;
+}
+
+message Reference {
+    string reference = 1;
+    string indent    = 2;
+}
+
+message Entanglement {
+    CodeBlock block                  = 1;
+    Definition definition            = 2;
+    repeated Reference referenced_by = 3;
+    repeated Reference references_to = 4;
+}
+
+message EntanglementIndex {
+    repeated Entanglement entanglements = 1;
+}
+

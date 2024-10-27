@@ -1,0 +1,7 @@
+click==8.1.7
+coloredlogs==15.0.1
+humanfriendly==10.0
+marko==2.1.2
+protobuf==5.27.3
+toml==0.10.2
+xxhash==3.5.0
